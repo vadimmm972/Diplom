@@ -1,0 +1,108 @@
+﻿@model Sell_Buy.Models.Modal_Registration
+
+@{
+    Layout = null;
+    List<string> countryList = new List<string>();
+    List<string> regionList = new List<string>();
+    List<string> sityList = new List<string>();
+   
+   //  lst = Model.Country;
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="~/Content/css/AuntificationStyle.css" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="~/Content/javascript/AllScript.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        @using (Html.BeginForm())
+        {
+
+            List<SelectListItem> SelectlistCountrys = new List<SelectListItem>();//Список значений для DDL
+            List<SelectListItem> SelectlistRegions = new List<SelectListItem>();//Список значений для DDL
+            List<SelectListItem> SelectlistSites = new List<SelectListItem>();//Список значений для DDL
+            for (int i = 0; i < countryList.Count; i++)
+            {
+                SelectlistCountrys.Add(new SelectListItem() { Text = countryList[i].ToString() });//Заполняем его
+            }
+            for (int i = 0; i < regionList.Count; i++)
+            {
+                SelectlistRegions.Add(new SelectListItem() { Text = regionList[i].ToString() });//Заполняем его
+            }
+            for (int i = 0; i < sityList.Count; i++)
+            {
+                SelectlistSites.Add(new SelectListItem() { Text = sityList[i].ToString() });//Заполняем его
+            }
+            <div id="Registration">
+                <h1>Регистация</h1>
+                <fieldset id="inputs">
+
+
+                    @* @Html.TextBoxFor(a => a, new { @id = "username", placeholder = "Логин или Email", required = "true", autofocus = "true" })
+                        @Html.TextBoxFor(a => a.Password, new { @id = "password", placeholder = "Пароль", required = "true", autofocus = "true" })*@
+
+                    @Html.TextBoxFor(a => a.NameFirst, new { @id = "regFormtxt", placeholder = "Фамилия", required = "true", autofocus = "true" })
+                    @Html.TextBoxFor(a => a.NameLast, new { @id = "regFormtxt", placeholder = "Имя", required = "true", autofocus = "true" })
+                    @Html.TextBoxFor(a => a.NameMiddle, new { @id = "regFormtxt", placeholder = "Отчество", required = "true", autofocus = "true" })
+                    @Html.TextBoxFor(a => a.Phone, new { @id = "regFormtxt", placeholder = "Телефон", required = "true", autofocus = "true" })
+                    @Html.TextBoxFor(a => a.Mail, new { @id = "regFormtxt", placeholder = "Электронная почта", required = "true", autofocus = "true" })
+
+                    @Html.DropDownListFor(a => a.Country, SelectlistCountrys, "--Страна--", new { @id = "selectID", onchange = "getRegions(this)" })
+                    @*@Html.DropDownListFor(a => a.Region, SelectlistRegions, "--Регион--", new { @id = "selectID" })
+                    @Html.DropDownListFor(a => a.Sity, SelectlistSites, "--Город--", new { @id = "selectID" })*@
+                    @Html.TextBoxFor(a => a.Image, new { @id = "imgSave", type = "hidden" })
+
+                </fieldset>
+                <button style="margin-left:19%;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Загрузить ваше фото</button>
+                <fieldset id="actions">
+                    <input class="regBtn" type="submit" id="submit" value="ВОЙТИ">
+
+                </fieldset>
+
+            </div>
+
+        }
+
+
+
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Ваше фото</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <p>Загрузить: <input type="file" class="imgsource"></p>
+                        <center><a id="btn_rightPdf" class="btn-popup btn-popup-red" href="javascript:AddImg()">Upload Image</a><a id="btn_leftPdf" class="btn-popup btn-popup-light-grey" href="javascript:CloseImgSource()">Cancel</a></center>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Trigger the modal with a button -->
+
+    </div>
+
+    @*<div class="uploadImage">
+            <div id="imgSource" style="width: auto; min-height: 102px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+                <p>Ваше фото</p>
+                <p>Загрузить: <input type="file" class="imgsource"></p>
+                <center><a id="btn_rightPdf" class="btn-popup btn-popup-red" href="javascript:AddImg()">Upload Image</a><a id="btn_leftPdf" class="btn-popup btn-popup-light-grey" href="javascript:CloseImgSource()">Cancel</a></center>
+            </div>
+     </div>*@
+</body>
+</html>

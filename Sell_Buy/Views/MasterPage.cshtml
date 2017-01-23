@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/css/StyleSheet.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/AllStyle.css" type="text/css" />
+    @RenderSection("scripts", false)
+
+</head>
+<body>
+    @*<table style="width:100%;">
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>Logog of division site</tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+        </table>*@
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            <div id="wrapper">
+                <div id="banner">
+                    <img class="imFon" src="~/Content/images/Logo.png" alt="~/  Content/images/Logo.png" height="200px" width="100%" />
+                </div>
+
+                <div id="navigation">
+                    <ul id="nav" onclick="click()">
+
+                        <li>@Html.ActionLink("About", "About", "MasterPage")</li>
+                        <li style="float: right">
+                           @* @if (Request.Cookies["lastVisit"] != null)
+    {*@
+                                @Html.ActionLink("Log out", "LogOut", "LogUser")
+                            <li>@Html.ActionLink("WebShop", "index", "WebShop")</li>
+                                <li>@Html.ActionLink("Basket", "index", "MyBasket")</li>
+                                <li>@Html.ActionLink("Contact admin", "index", "ContactsToAdmin")</li>
+                                <li>@Html.ActionLink("Update info", "Index", "UpdateInformation")</li>
+                           @* }
+    else
+    {
+        @Html.ActionLink("Log in", "index", "LogUser")
+        <li style="float: right">@Html.ActionLink("Register", "index", "RegUser")</li>
+    }
+    </li>*@
+        </ul>
+
+    </div>
+    <div id="content">
+        @RenderBody()
+        @*<asp:ContentPlaceHolder ID="ContentPlaceHolder1">
+
+            </asp:ContentPlaceHolder>*@
+                    </div>
+                </div>
+
+            </div>
+    }
+
+    <div>
+
+    </div>
+</body>
+</html>
