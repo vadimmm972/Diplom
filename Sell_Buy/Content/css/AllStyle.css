@@ -1,1 +1,14 @@
-﻿
+﻿.exitClass , .createMagazineClass , .backetClass{
+  
+    left:72%;
+}
+
+
+@media (max-width:  767px){
+   .exitClass,.createMagazineClass , .backetClass{
+  
+    left:auto;
+}
+
+}
+
