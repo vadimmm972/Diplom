@@ -308,7 +308,7 @@ fieldset
           0 7px 0 rgba(0, 0, 0, .2);
 }
 
-#selectID{
+#selectIDCountry , #selectIDRegion,#selectIDSity{
         background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
     padding: 15px 15px 15px 30px;
     margin: 0 0 10px 0;
@@ -321,6 +321,7 @@ fieldset
     -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
     box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
 }
+
 
 
 .btn-popup-red{
@@ -338,4 +339,13 @@ fieldset
     position: absolute;
     left: 40%;
     top: 40%;
+}
+
+
+.classRegion{
+    display:none;
+}
+
+.classSity{
+    display:none;
 }
