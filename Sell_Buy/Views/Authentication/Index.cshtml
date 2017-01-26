@@ -1,9 +1,9 @@
 ﻿@model Sell_Buy.Models.Modal_Auntufication
 
 @{
-    ViewBag.Title = "Index";
-   // Layout = "~/Views/MasterPage.cshtml";
-    Layout = null;
+    ViewBag.Title = "Deler_Login";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+   
 }
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
@@ -14,28 +14,30 @@
     @Html.AntiForgeryToken()
 
 
-   
+
     <body>
-       <div id="login">
+        
+        <div id="login">
             <h1>Вход в кабинет</h1>
             <fieldset id="inputs">
-                @*<input id="username" type="text" placeholder="Логин" autofocus required>*@
-                @Html.TextBoxFor(a => a.Login, new { @id = "username", placeholder = "Логин или Email", required = "true", autofocus="true" })
-                @Html.TextBoxFor(a => a.Password, new { @id = "password", placeholder = "Пароль", required = "true", autofocus="true" })
 
-                 
+                @*<input id="username" type="text" placeholder="Логин" autofocus required>*@
+                @Html.TextBoxFor(a => a.Login, new { @id = "username", placeholder = "Логин или Email", required = "true", autofocus = "true" })
+                @Html.TextBoxFor(a => a.Password, new { @id = "password", placeholder = "Пароль", required = "true", autofocus = "true" })
+
+
             </fieldset>
             <fieldset id="actions">
                 <input type="submit" id="submit" value="ВОЙТИ">
                 @*<a href="">Забыли пароль?</a><a href="">Регистрация</a>*@
-                    @Html.ActionLink("Забыли пароль?", "", "")
-                    @Html.ActionLink("Регистрация", "Index", "Authorization")
-                </fieldset>
-            </div>
+                @Html.ActionLink("Забыли пароль?", "", "")
+                @Html.ActionLink("Регистрация", "Index", "Authorization")
+            </fieldset>
+        </div>
 
-        </body>
+    </body>
 
 
-    }
+}
 
 

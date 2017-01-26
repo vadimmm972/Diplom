@@ -1,14 +1,133 @@
-﻿.exitClass , .createMagazineClass , .backetClass{
+﻿
+body{
+     background: url(../images/bg.png) repeat;
+}
+
+.exitClass , .createMagazineClass , .backetClass{
   
     left:72%;
 }
 
+.Enter_Reg{
+    position:absolute;
+    left:70%;
+}
 
-@media (max-width:  767px){
+.LgTopStyle{
+    display:block;
+    left:30%;
+}
+ .deviseStyleTop{
+        display:none;
+         left:30%;
+    }
+
+
+ .AllInfo{
+    margin-top:5%;
+ }
+
+ .linkA > a{
+     color:red;
+ }
+
+ .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: auto;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+
+
+#modal_form {
+	width: 26%; 
+	height: auto; 
+	border-radius: 5px;
+	border: 3px #000 solid;
+	background: #fff;
+	position: fixed; 
+	top: 5%; 
+	left: 50%; 
+	margin-top: -150px;
+	margin-left: -150px; 
+	display: none; 
+	opacity: 0; 
+	z-index: 5;
+	padding: 20px 10px;
+}
+
+#modal_form #modal_close {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	cursor: pointer;
+	display: block;
+}
+
+#overlay {
+	z-index:3; 
+	position:fixed;
+	background-color:#000; 
+	opacity:0.8; 
+	-moz-opacity:0.8; 
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%;
+	top:0;
+	left:0;
+	cursor:pointer;
+	display:none; 
+}
+
+.label{
+	position:absolute;
+	left:35%;
+	width:50%;
+}
+
+.updateInfouser{
+	display:none;
+	width:50%;
+	border-radius:10px;
+}
+
+
+ 
+ /*   Media tegs  */
+    @media (max-width: 990px) {
+         .deviseStyleTop{
+        display:block;
+    }
+    .LgTopStyle{
+    display:none;
+    }
+
+}
+    @media (max-width:  767px){
    .exitClass,.createMagazineClass , .backetClass{
   
     left:auto;
 }
-
+   .LgTopStyle{
+    display:block;
 }
+ .deviseStyleTop{
+        display:none;
+    }
+   
+}
+
+
+
+    
 

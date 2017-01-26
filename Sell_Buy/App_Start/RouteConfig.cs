@@ -7,11 +7,20 @@ using System.Web.Routing;
 
 namespace Sell_Buy
 {
+    
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+
+              routes.MapRoute(
+             name: "StartPage",
+             url: "Home",
+             defaults: new { controller = "StartPage", action = "Index", id = UrlParameter.Optional }
+         );
+
             routes.MapRoute(
              name: "AuthorizationName",
              url: "Authorization",

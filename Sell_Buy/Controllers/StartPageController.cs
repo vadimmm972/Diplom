@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Sell_Buy.Controllers
 {
-    public class testController : Controller
+    public class StartPageController : Controller
     {
-        // GET: test
+        // GET: StartPage
         public ActionResult Index()
         {
             return View();

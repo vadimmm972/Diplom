@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string ErrorMessage = null;
+     ErrorMessage=  ViewBag.ErrorMessage;
+}
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -8,6 +13,7 @@
     <meta name="viewport" content="width=device-width" />
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -17,20 +23,64 @@
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>  
+                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">Мой профиль</a>
                 </div>
                 <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Основная страница</a></li>
-                        <li><a href="#about">О нас</a></li>
-                        <li><a href="#contact">Контакти</a></li>
-                        <li class="backetClass"><a href="#contact">Корзина</a></li>
-                        <li class="createMagazineClass"><a href="#contact">Создать магазин</a></li>
-                        <li class="exitClass"><a href="#contact">Выход</a></li>
-                    </ul>
+
+
+
+                    @if (Request.Cookies["Authentication"] == null)
+                    {
+                        <ul class="nav navbar-nav col-lg-5">
+                            <li class="active"><a href="#">Основная страница</a></li>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#contact">Контакти</a></li>
+                        </ul>
+                        <ul class=" LgTopStyle nav navbar-nav col-lg-5 ">
+
+                            @*<a href="#contact">Вход/Регистрация</a>*@
+                            <li>@Html.ActionLink("Вход/Регистрация", "Index", "Authentication")</li>
+
+                        </ul>
+                        <ul class="deviseStyleTop nav navbar-nav col-lg-5">
+                            <li class="dropdown">
+                                <a class=" dropdown-toggle" data-toggle="dropdown" href="#">Допонительно<span class="caret"></span></a>
+                                <ul style="background:#101010;" class="dropdown-menu ">
+
+                                    <li><a href="#contact">Вход/Регистрация</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav col-lg-5">
+                            <li><a href="#">Основная страница</a></li>
+                            <li><a href="#contact">Контакти</a></li>
+                        </ul>
+                        <ul class=" LgTopStyle nav navbar-nav col-lg-5 ">
+                            <li><a href="#contact">Корзина</a></li>
+                            <li><a href="#contact">Создать магазин</a></li>
+                            <li>@Html.ActionLink("Выход", "LogOut", "Authentication")</li>
+                        </ul>
+                        <ul class="deviseStyleTop nav navbar-nav col-lg-5">
+                            <li class="dropdown">
+                                <a class=" dropdown-toggle" data-toggle="dropdown" href="#">Допонительно<span class="caret"></span></a>
+                                <ul style="background:#101010;" class="dropdown-menu ">
+                                    <li class="linkA"><a href="#contact">Корзина</a></li>
+                                    <li><a href="#contact">Создать магазин</a></li>
+                                    <li>@Html.ActionLink("Выход", "LogOut", "Authentication")</li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    }
+
+
                 </div><!--/.nav-collapse -->
             </div>
         </div>
@@ -38,12 +88,99 @@
         <div class="container">
 
             <div class="text-center">
-                <h1>Bootstrap starter template</h1>
-                <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
             </div>
 
         </div><!-- /.container -->
-        @RenderBody()
+        
+        <div class="AllInfo">
+
+
+        
+
+
+
+            @if (ErrorMessage != null)
+            {
+                <div class="alert alert-danger">
+                    <h3>@ErrorMessage</h3>
+                </div>
+            }
+           
+         @RenderBody()
+         </div>
     </div>
+
+    <a href="#" id="go">Info</a>
+
+    <div id="modal_form">
+        <span id="modal_close">X</span>
+        <div class="card">
+            <img src="http://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:100%">
+            <div class="container">
+
+
+                <h3>Фамилия  	<span class="label label-default">Пупкин</span></h3>
+
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Имя 		<span class="label label-default">Василий</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Отчество 	<span class="label label-default">Васильевич</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Номер 	<span class="label label-default">0684247364</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Емейл 	<span class="label label-default">vadimmm972@gmail.com</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Страна 	<span class="label label-default">Украина</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Регион 	<span class="label label-default">Ровенская обл.</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+
+                <h3>Город 	<span class="label label-default">г.Ровно</span></h3>
+                <input class="updateInfouser" type="text" value="Пупкин" />
+                <input class="updateInfo" type="button" value="Изменить" />
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div id="overlay"></div>
 </body>
 </html>
+<script>
+    $(".dropdown-menu>li>a").css('color', 'white');
+
+
+    $(".updateInfo").on("click", function () {
+        $(".label").css('display', 'none');
+        $(".updateInfouser").css('display', 'block');
+    });
+
+    $(document).ready(function () {
+        $('a#go').click(function (event) {
+            event.preventDefault();
+            $('#overlay').fadeIn(400,
+                function () {
+                    $('#modal_form')
+                        .css('display', 'block')
+                        .animate({ opacity: 1, top: '20%' }, 300);
+                });
+        });
+
+        $('#modal_close, #overlay').click(function () {
+            $('#modal_form')
+                .animate({ opacity: 0, top: '10%' }, 200,
+                    function () {
+                        $(this).css('display', 'none');
+                        $('#overlay').fadeOut(400);
+                    }
+                );
+        });
+    });
+    </script>

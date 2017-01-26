@@ -1,7 +1,7 @@
 ﻿@model Sell_Buy.Models.Modal_Registration
 
 @{
-    Layout = null;
+    Layout = "~/Views/_LayoutPage1.cshtml"; 
     List<string> countryList = new List<string>();
     List<string> regionList = new List<string>();
     List<string> sityList = new List<string>();
@@ -54,12 +54,17 @@
                     @Html.TextBoxFor(a => a.NameMiddle, new { @id = "regFormtxt", placeholder = "Отчество", required = "true", autofocus = "true" })
                     @Html.TextBoxFor(a => a.Phone, new { @id = "regFormtxt", placeholder = "Телефон", required = "true", autofocus = "true" })
                     @Html.TextBoxFor(a => a.Mail, new { @id = "regFormtxt", placeholder = "Электронная почта", required = "true", autofocus = "true" })
+                    @Html.TextBoxFor(a => a.Login, new { @id = "regFormtxt", placeholder = "Логин", required = "true", autofocus = "true" })
+                    @Html.TextBoxFor(a => a.Password, new { @id = "regFormtxt", placeholder = "Пароль", required = "true", autofocus = "true" })
+
+
+
 
                     @Html.DropDownListFor(a => a.Country, SelectlistCountrys, "--Страна--", new { @id = "selectIDCountry", onchange = "getRegions(this)" })
                     @Html.DropDownListFor(a => a.Region, SelectlistRegions, "--Регион--", new { @id = "selectIDRegion", @class = "classRegion" ,onchange="getSities(this)" })
                     @Html.DropDownListFor(a => a.Sity, SelectlistSites, "--Город--", new { @id = "selectIDSity", @class = "classSity"})
                     @Html.TextBoxFor(a => a.Image, new { @id = "imgSave", type = "hidden" })
-
+                   
                 </fieldset>
                 <button style="margin-left:19%;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Загрузить ваше фото</button>
                 <fieldset id="actions">
@@ -84,8 +89,13 @@
                     </div>
                     <div class="modal-body">
 
-                        <p>Загрузить: <input type="file" class="imgsource"></p>
-                        <center><a id="btn_rightPdf" class="btn-popup btn-popup-red" href="javascript:AddImg()">Upload Image</a><a id="btn_leftPdf" class="btn-popup btn-popup-light-grey" href="javascript:CloseImgSource()">Cancel</a></center>
+                        <div class="uploadImage">
+                            <div id="imgSource" style="width: auto; min-height: 102px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+                                <p>Ваше фото</p>
+                                <p>Загрузить: <input type="file" class="imgsource"></p>
+                                <center><a id="btn_rightPdf" class="btn-popup btn-popup-red" href="javascript:AddImg()">Upload Image</a><a id="btn_leftPdf" class="btn-popup btn-popup-light-grey" href="javascript:CloseImgSource()">Cancel</a></center>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -106,3 +116,10 @@
      </div>*@
 </body>
 </html>
+
+<script>
+   
+    $(".modal-dialog").css('position', 'absolute');
+    $(".modal-dialog").css('left', '40%');
+   
+    </script>

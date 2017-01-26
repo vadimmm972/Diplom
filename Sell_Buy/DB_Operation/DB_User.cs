@@ -47,6 +47,8 @@ namespace Sell_Buy.DB_Operation
                 u.id_magazine = user.id_magazine;
                 u.date_register = user.date_register;
                 u.register_magazine = user.register_magazine;
+                u.C_login = user.C_login;
+                u.C_password = user.C_password;
                 db.SaveChanges();
                 return u.name_last + "was succefully updated";
             }

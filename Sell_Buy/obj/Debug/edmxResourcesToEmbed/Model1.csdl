@@ -153,6 +153,8 @@
     <NavigationProperty Name="Site" Relationship="Self.FK__Users__id_sity__0880433F" FromRole="Users" ToRole="Sites" />
     <Property Name="date_register" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
     <Property Name="register_magazine" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+    <Property Name="C_login" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+    <Property Name="C_password" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__Basket__id_produ__10216507">
     <End Role="Products" Type="Self.Product" Multiplicity="0..1" />

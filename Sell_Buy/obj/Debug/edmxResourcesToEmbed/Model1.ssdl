@@ -119,6 +119,8 @@
     <Property Name="id_magazine" Type="int" />
     <Property Name="date_register" Type="varchar" MaxLength="55" />
     <Property Name="register_magazine" Type="varchar" MaxLength="55" />
+    <Property Name="_login" Type="nvarchar" MaxLength="55" />
+    <Property Name="_password" Type="nvarchar" MaxLength="55" />
   </EntityType>
   <Association Name="FK__Basket__id_produ__10216507">
     <End Role="Products" Type="Self.Products" Multiplicity="0..1" />

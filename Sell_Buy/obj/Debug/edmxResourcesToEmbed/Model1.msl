@@ -114,6 +114,8 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="Sell_BuyModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="C_password" ColumnName="_password" />
+          <ScalarProperty Name="C_login" ColumnName="_login" />
           <ScalarProperty Name="register_magazine" ColumnName="register_magazine" />
           <ScalarProperty Name="date_register" ColumnName="date_register" />
           <ScalarProperty Name="id" ColumnName="id" />

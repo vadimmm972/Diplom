@@ -40,5 +40,11 @@ namespace Sell_Buy.Models
 
         [Display(Name = "Фотография ")]
         public string Image { get; set; }
+
+        [Display(Name = "Логин ")]
+        public string Login { get; set; }
+
+         [Display(Name = "Пароль ")]
+        public string Password { get; set; }
     }
 }

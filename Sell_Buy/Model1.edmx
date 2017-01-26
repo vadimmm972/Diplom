@@ -124,6 +124,8 @@
           <Property Name="id_magazine" Type="int" />
           <Property Name="date_register" Type="varchar" MaxLength="55" />
           <Property Name="register_magazine" Type="varchar" MaxLength="55" />
+          <Property Name="_login" Type="nvarchar" MaxLength="55" />
+          <Property Name="_password" Type="nvarchar" MaxLength="55" />
         </EntityType>
         <Association Name="FK__Basket__id_produ__10216507">
           <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
@@ -568,6 +570,8 @@
           <NavigationProperty Name="Site" Relationship="Self.FK__Users__id_sity__0880433F" FromRole="Users" ToRole="Sites" />
           <Property Name="date_register" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
           <Property Name="register_magazine" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="C_login" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Name="C_password" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Basket__id_produ__10216507">
           <End Role="Products" Type="Self.Product" Multiplicity="0..1" />
@@ -974,6 +978,8 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Sell_BuyModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="C_password" ColumnName="_password" />
+                <ScalarProperty Name="C_login" ColumnName="_login" />
                 <ScalarProperty Name="register_magazine" ColumnName="register_magazine" />
                 <ScalarProperty Name="date_register" ColumnName="date_register" />
                 <ScalarProperty Name="id" ColumnName="id" />

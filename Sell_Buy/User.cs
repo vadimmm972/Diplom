@@ -37,6 +37,8 @@ namespace Sell_Buy
         public Nullable<int> id_magazine { get; set; }
         public string date_register { get; set; }
         public string register_magazine { get; set; }
+        public string C_login { get; set; }
+        public string C_password { get; set; }
     
         public virtual ICollection<Basket> Baskets { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }

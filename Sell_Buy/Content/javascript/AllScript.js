@@ -8,7 +8,7 @@
     var files = $("#imgSource .imgsource").get(0).files;
     if (files.length > 0) {
         data.append("HelpSectionImages", files[0]);
-        $("#imgSave").val(files[0].name);
+       
     }
     else {
         alert("error");
@@ -17,13 +17,14 @@
     data.append("id", 11);
     data.append("elementid", 11);
     $.ajax({
-        url: 'UploadImage',
+        url: 'Authorization/UploadImage',
         type: "POST",
         processData: false,
         contentType: false,
         data: data,
         success: function (response) {
-           // $("body").append("<img src=\"" + response + "\" >");
+            // $("body").append("<img src=\"" + response + "\" >");
+            $("#imgSave").val(response);
         }
     });
 }
@@ -32,7 +33,7 @@ function getRegions(event)
 {
    
     $.ajax({
-        url: 'GetRegions',
+        url: 'Authorization/GetRegions',
         type: "POST",
         //  processData: false,
         // contentType: false,
@@ -56,7 +57,7 @@ function getRegions(event)
 function getSities(event) {
     //$('#selectIDSity').empty();
     $.ajax({
-        url: 'GetSities',
+        url: 'Authorization/GetSities',
         type: "POST",
         //  processData: false,
         // contentType: false,
@@ -77,6 +78,9 @@ function getSities(event) {
 }
 
 
+
+
+
 //$(document).ready(function () {
 
 //    $.ajax({
@@ -95,3 +99,30 @@ function getSities(event) {
 //    });
 //});
 
+
+$(".updateInfo").on("click", function () {
+    $(".label").css('display', 'none');
+    $(".updateInfouser").css('display', 'block');
+});
+
+$(document).ready(function () {
+    $('a#go').click(function (event) {
+        event.preventDefault();
+        $('#overlay').fadeIn(400,
+		 	function () {
+		 	    $('#modal_form')
+					.css('display', 'block')
+					.animate({ opacity: 1, top: '15%' }, 300);
+		 	});
+    });
+
+    $('#modal_close, #overlay').click(function () {
+        $('#modal_form')
+			.animate({ opacity: 0, top: '10%' }, 200,
+				function () {
+				    $(this).css('display', 'none');
+				    $('#overlay').fadeOut(400);
+				}
+			);
+    });
+});

@@ -41,8 +41,38 @@ namespace Sell_Buy.Controllers
             List<string> countries = sel.Countries.Select(d => d.name_country).ToList();
            
             ViewBag.Countries = countries;
-          
-            
+
+
+
+            //User ccc = new User
+            //   {
+            //       name_first = "test",
+            //       name_last = "test",
+            //       name_middle = "test",
+            //       phone = "222",
+            //       mail = "test@mail.ru",
+            //       id_country = 1,
+            //       id_region = 1,
+            //       id_sity = 1,
+            //       C_status = 1,
+            //       active = 1,
+            //       id_language = 1,
+            //       C_image = "none",
+            //       id_magazine = null,
+            //       date_register = "22.02.97",
+            //       register_magazine = "222",
+            //       C_login = "test",
+            //       C_password = "test"
+            //   };
+
+          //  DB_User u = new DB_User();
+          //  u.InsertUser(ccc);
+
+
+
+
+
+
            
            
             return View();
@@ -51,55 +81,67 @@ namespace Sell_Buy.Controllers
         [HttpPost]
         public ActionResult Index(Modal_Registration newUser)
         {
+
             Sell_Buy_Entities db = new Sell_Buy_Entities();
+            var aut = db.Users.FirstOrDefault(u => u.C_login == newUser.Login);
+            if(aut==null)
+            {
+                var idCounrty = (from u in db.Countries
+                        where u.name_country == newUser.Country
+                        select u.id).ToList();
 
+                int idRegion =Convert.ToInt32(newUser.Region);
 
-            var idCounrty = (from u in db.Countries
-                    where u.name_country == newUser.Country
-                    select u.id).ToList();
-
-            var idRegion = (from u in db.Regions
-                    where u.name_region == newUser.Region
-                            select u.id).ToList();
-
-            var idSity = (from u in db.Sites
-                    where u.name_sity == newUser.Sity
-                          select u.id).ToList();
+                int idSity = Convert.ToInt32(newUser.Sity);
 
         
-                DateTime dateTime = new DateTime();
-                string date_reg_user = dateTime.ToString("yyyy-MM-dd HH':'mm':'ss");
-            User user = new User
-            {
-                name_first = newUser.NameFirst,
-                name_last = newUser.NameLast,
-                name_middle = newUser.NameMiddle,
-                phone = newUser.Phone,
-                mail = newUser.Mail,
-                id_country = Convert.ToInt32(idCounrty[0]),
-                id_region =  Convert.ToInt32(idRegion[0]),
-                id_sity = Convert.ToInt32(idSity[0]),
-                C_status = 1,
-                active = 1,
-                id_language = 1,
-                date_register = date_reg_user,
-                register_magazine = "",
-                C_image = newUser.Image
-            };
+                    DateTime dateTime = new DateTime();
+                    string date_reg_user = dateTime.ToString("yyyy-MM-dd HH':'mm':'ss");
+                User userAdd = new User
+                {
+                    name_first = newUser.NameFirst,
+                    name_last = newUser.NameLast,
+                    name_middle = newUser.NameMiddle,
+                    phone = newUser.Phone,
+                    mail = newUser.Mail,
+                    id_country = Convert.ToInt32(idCounrty[0]),
+                    id_region = idRegion,
+                    id_sity = idSity,
+                    C_status = 1,
+                    active = 1,
+                    id_language = 1,
+                    C_image = newUser.Image.ToString(),
+                    id_magazine = null,
+                    date_register = date_reg_user,
+                    register_magazine = "none",
+                    C_login = newUser.Login.ToString(),
+                    C_password = newUser.Password.ToString()
+                };
 
-            DB_User new_user = new DB_User();
-            new_user.InsertUser(user);
+                DB_User registerUser = new DB_User();
+                registerUser.InsertUser(userAdd);
+                return RedirectToRoute("AuthenticatioName");
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Такой пользователь уже существует";
+            }
            // return View();
-            return RedirectToRoute("AuthenticatioName");
+            return View();
         }
 
-        public void UploadImage()
+        public JsonResult UploadImage()
         {
+            Random rand = new Random();
+
+            int temp;
+
+            temp = rand.Next(100000000);
             var pic = System.Web.HttpContext.Current.Request.Files["HelpSectionImages"];
             var id = System.Web.HttpContext.Current.Request.Form["id"];
            // var elementId = System.Web.HttpContext.Current.Request.Form["elementid"];
             var fileName = "P";
-            fileName += 12;
+            fileName += temp;
             fileName += "_";
            
             fileName += "Us.jpg";
@@ -110,6 +152,7 @@ namespace Sell_Buy.Controllers
             var imgpath = "~/Content/images/usersPhotos" + fileName.Trim();
             ViewBag.PhotoUser = fileName.Trim();
            // var jsonResult = Json(imgpath, JsonRequestBehavior.AllowGet);
+            return Json(fileName.Trim());
             
         }
 
@@ -188,7 +231,7 @@ namespace Sell_Buy.Controllers
         [HttpPost]
         public JsonResult GetSities(int id)
         {
-            int idRegion = 0;
+          //  int idRegion = 0;
             Sell_Buy_Entities db = new Sell_Buy_Entities();
             //List<string> jsonResult = new List<string>();
 
