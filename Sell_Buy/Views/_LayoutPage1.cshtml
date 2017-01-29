@@ -1,6 +1,7 @@
 ﻿@{
     string ErrorMessage = null;
      ErrorMessage=  ViewBag.ErrorMessage;
+     List<string> countryList = ViewBag.Country;
 }
 
 <!DOCTYPE html>
@@ -13,7 +14,8 @@
     <meta name="viewport" content="width=device-width" />
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <script src="~/Content/javascript/AllScript.js"></script>
+    <link href="~/Content/css/AuntificationStyle.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -26,7 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Мой профиль</a>
+                    <a id="go" class="navbar-brand" href="" onclick="getInfoUser()">Мой профиль</a>
                 </div>
                 <div class="collapse navbar-collapse">
 
@@ -111,7 +113,7 @@
          </div>
     </div>
 
-    <a href="#" id="go">Info</a>
+
 
     <div id="modal_form">
         <span id="modal_close">X</span>
@@ -120,31 +122,32 @@
             <div class="container">
 
 
-                <h3>Фамилия  	<span class="label label-default">Пупкин</span></h3>
+                <h3 class="dataInfo ">Фамилия  	<span class="infoFirstName label label-default"></span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="firstName" placeholder="Фамилия" required="true" type="text" value="">
+               
 
-                <input class="updateInfouser" type="text" value="Пупкин" />
+                <h3 class="dataInfo ">Имя 		<span class="infoLastName label label-default">Василий</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="lastName" placeholder="Имя" required="true" type="text" value="">
 
-                <h3>Имя 		<span class="label label-default">Василий</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
+                <h3 class="dataInfo ">Отчество 	<span class="infoMiddleName label label-default">Васильевич</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="middleName" placeholder="Отчество" required="true" type="text" value="">
 
-                <h3>Отчество 	<span class="label label-default">Васильевич</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
+                <h3 class="dataInfo ">Номер 	<span class="infoPhone label label-default">0684247364</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="phone" placeholder="Номер" required="true" type="text" value="">
 
-                <h3>Номер 	<span class="label label-default">0684247364</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
+                <h3 class="dataInfo ">Емейл 	<span class="infoMail label label-default">vadimmm972@gmail.com</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="mail" placeholder="Емейл" required="true" type="text" value="">
 
-                <h3>Емейл 	<span class="label label-default">vadimmm972@gmail.com</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
+                <h3 class="dataInfo">Страна 	<span class="infoCountry label label-default">Украина</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="country" placeholder="Страна" required="true" type="text" value="">
 
-                <h3>Страна 	<span class="label label-default">Украина</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
+                <h3 class="dataInfo">Регион 	<span class="infoRegion label label-default">Ровенская обл.</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="region" placeholder="Регион" required="true" type="text" value="">
 
-                <h3>Регион 	<span class="label label-default">Ровенская обл.</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
-
-                <h3>Город 	<span class="label label-default">г.Ровно</span></h3>
-                <input class="updateInfouser" type="text" value="Пупкин" />
-                <input class="updateInfo" type="button" value="Изменить" />
+                <h3 class="dataInfo">Город 	<span class="infoSity label label-default">г.Ровно</span></h3>
+                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="sity" placeholder="Город" required="true" type="text" value="">
+                <a href="#" class="updateInfo col-xs-4 button24" onclick="functionInfoUpdate()">Изменить</a>
+                <a href="#" class="SaveUpdateInfo col-xs-4 button25">Сохранить</a>
             </div>
         </div>
     </div>

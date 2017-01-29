@@ -100,10 +100,41 @@ function getSities(event) {
 //});
 
 
-$(".updateInfo").on("click", function () {
-    $(".label").css('display', 'none');
-    $(".updateInfouser").css('display', 'block');
-});
+//$(".updateInfo").on("click", function () {
+function functionInfoUpdate() {
+    $(".updateInfo").css('display', 'none');
+    $(".dataInfo").css('display', 'none');
+    $('.SaveUpdateInfo').css('display', 'block');
+    //});
+
+
+
+
+}
+
+function getInfoUser() {
+    $.ajax({
+        url: 'StartPage/GetInfoUser',
+        type: "POST",
+        //   data: { id: parseInt(event.value) },
+        success: function (response) {
+          
+            $('.infoFirstName').text(response[0].NameFirst);
+            $('.infoLastName').text(response[0].NameLast);
+            $('.infoMiddleName').text(response[0].NameMiddle);
+            $('.infoPhone').text(response[0].Phone);
+            $('.infoMail').text(response[0].Mail);
+            $('.infoCountry').text(response[0].Country);
+            $('.infoRegion').text(response[0].Region);
+            $('.infoSity').text(response[0].Sity);
+
+            }
+
+
+        
+    });
+}
+
 
 $(document).ready(function () {
     $('a#go').click(function (event) {

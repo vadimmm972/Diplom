@@ -47,13 +47,37 @@ body{
 
 
 
+a.button25 {
+  position: relative;
+
+  width: 10em;
+  height: 2.5em;
+  line-height: 2.5em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #777;
+  color: #fff;
+  outline: none;
+  border: 2px solid #F64C2B;
+  border-radius: 5px;
+  box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+  background: linear-gradient(#FB9575, #F45A38 48%, #EA1502 52%, #F02F17);
+}
+a.button25:active {
+  top: .1em;
+  left: .1em;
+  box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+}
+
 #modal_form {
-	width: 26%; 
+	width: 30%; 
 	height: auto; 
 	border-radius: 5px;
 	border: 3px #000 solid;
 	background: #fff;
-	position: fixed; 
+	/*position: fixed; */
+    position:absolute;
 	top: 5%; 
 	left: 50%; 
 	margin-top: -150px;
@@ -92,17 +116,42 @@ body{
 .label{
 	position:absolute;
 	left:35%;
-	width:50%;
+	width:60%;
 }
 
 .updateInfouser{
 	display:none;
 	width:50%;
-	border-radius:10px;
+	
 }
 
-
+.updateInfo
+{
+    margin-top:20px;
+    margin-left:32%;
+}
  
+
+#inputs input 
+{
+    background: #f1f1f1 url(http://www.red-team-design.com/wp-content/uploads/2011/09/login-sprite.png) no-repeat;
+    padding: 15px 15px 15px 30px;
+    margin: 0 0 10px 0;
+    width: 100%; /* 353 + 2 + 45 = 400 */
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    -webkit-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+}
+
+.SaveUpdateInfo{
+    display:none;
+    margin-left:30%;
+}
+
  /*   Media tegs  */
     @media (max-width: 990px) {
          .deviseStyleTop{
@@ -128,6 +177,22 @@ body{
 }
 
 
+    a.button24 {
+        text-align:center;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: .5em 2em;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-color: #FDBE33 #000 #D77206;
+  border-radius: 6px;
+  background: linear-gradient(#F3AE0F, #E38916) #E38916;
+  transition: 0.2s;
+} 
+a.button24:hover { background: linear-gradient(#f5ae00, #f59500) #f5ae00; }
+a.button24:active { background: linear-gradient(#f59500, #f5ae00) #f59500; }
 
     
 

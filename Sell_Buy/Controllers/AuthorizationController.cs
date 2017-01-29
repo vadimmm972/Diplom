@@ -156,44 +156,6 @@ namespace Sell_Buy.Controllers
             
         }
 
-
-        //[HttpPost]
-        //public JsonResult GetAllCRS()
-        //{
-        //    Sell_Buy_Entities db = new Sell_Buy_Entities();
-        //    DB_Country country = new DB_Country();
-        //    var str = "" ;
-        //    //List<Country> countries = country.GetallCountries();
-        //    List<Country> countries = (from u in db.Countries
-        //                             select u).ToList();
-
-        //    var reionGet = countries[0].Regions.ToList();
-        //    List<CountryListController> countryClass = new List<CountryListController>();
-        //   // StringBuilder countryBufer = new StringBuilder();
-        //  //  StringBuilder RegionBufer = new StringBuilder();
-        // //   StringBuilder SityBufer = new StringBuilder();
-          
-        //    for (int i = 0; i < countries.Count;i++)
-        //    {
-        //        countryClass.Add(new CountryListController { id = countries[i].id, NameCountry = countries[i].name_country });
-               
-        //        //if (countries[i].Regions.Count != 0)
-        //        //{
-        //        for (int r = 0; r < reionGet.Count; r++)
-        //            {
-
-        //                regions.Add(new RegionsListController { id = reionGet[r].id, NameRegion = reionGet[r].name_region});
-        //            }
-        //        }
-
-              
-                
-            
-
-        //    return Json(new { countries = countryClass, region = regions });
-        //}
-
-
         [HttpPost]
         public JsonResult Getregions(string Name)
         {
@@ -260,5 +222,10 @@ namespace Sell_Buy.Controllers
 
             return Json(sities);
         }
+
+
+
+
+
     }
 }
