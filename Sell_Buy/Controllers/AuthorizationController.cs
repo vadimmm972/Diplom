@@ -191,7 +191,7 @@ namespace Sell_Buy.Controllers
 
 
         [HttpPost]
-        public JsonResult GetSities(int id)
+        public JsonResult GetSities(int id,string Name)
         {
           //  int idRegion = 0;
             Sell_Buy_Entities db = new Sell_Buy_Entities();
@@ -209,11 +209,30 @@ namespace Sell_Buy.Controllers
 
           //  idCountryToGetRegions = Convert.ToInt32(idCounrty[0]);
             //var regions = reg.GetRegionToIdCountry(id);
+            //var AllSitiesToid;
+            //if(Name != "none")
+            //{
+            //    var AllSitiesToid = (from u in db.Sites
+            //                         where u.id_region == id
+            //                         select u).ToList();
 
-            var AllSitiesToid = (from u in db.Sites
-                                  where u.id_region == id
-                                  select u).ToList();
-
+            //}
+            //else
+            //{
+            if(Name != "none")
+            {
+                var idRegion = (from u in db.Regions
+                                where u.name_region == Name
+                                select u.id).ToList();
+                 id = Convert.ToInt32(idRegion[0]);
+            }
+               
+              
+                
+               var  AllSitiesToid = (from u in db.Sites
+                                     where u.id_region == id
+                                     select u).ToList();
+         //   }
 
             for (int i = 0; i < AllSitiesToid.Count; i++)
             {
@@ -221,6 +240,28 @@ namespace Sell_Buy.Controllers
             }
 
             return Json(sities);
+        }
+
+
+
+
+
+        [HttpPost]
+        public JsonResult GetCountries()
+        {
+            Sell_Buy_Entities sel = new Sell_Buy_Entities();
+            List<CountryListController> country = new List<CountryListController>();
+            DB_Country c = new DB_Country();
+
+            var countries = c.GetallCountries().ToList();
+
+            for (int i = 0; i < countries.Count;i++ )
+            {
+                country.Add(new CountryListController { id = countries[i].id, NameCountry = countries[i].name_country});
+            }
+
+
+                return Json(country);
         }
 
 

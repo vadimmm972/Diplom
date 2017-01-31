@@ -61,7 +61,7 @@ function getSities(event) {
         type: "POST",
         //  processData: false,
         // contentType: false,
-        data: { id: parseInt(event.value) },
+        data: { id: parseInt(event.value) , Name: "none" },
         success: function (response) {
 
             var regSelect = document.getElementById("selectIDSity");
@@ -157,3 +157,155 @@ $(document).ready(function () {
 			);
     });
 });
+
+
+// Update Info to users
+function infoFirstNameUser(event) {
+
+    $(".infoFirstName").css('display', 'none');
+    $(".frName").css('display', 'none');
+    $(".updFirstName").val(event.innerText);
+    $(".updFirstName").css('display', 'block');
+   
+}
+
+
+function infoLasttNameUser(event) {
+
+   
+    $(".lsName").css('display', 'none');
+    $(".infoLastName").css('display', 'none');
+    $(".updLastName").val(event.innerText);
+    $(".updLastName").css('display', 'block');
+    
+    
+}
+
+function infoMiddleNameUser(event) {
+
+
+    $(".mdlName").css('display', 'none');
+    $(".infoMiddleName").css('display', 'none');
+    $(".udMiddleName").val(event.innerText);
+    $(".udMiddleName").css('display', 'block');
+
+
+}
+
+function infoPhoneUser(event) {
+
+
+    $(".usPhone").css('display', 'none');
+    $(".infoPhone").css('display', 'none');
+    $(".updPhone").val(event.innerText);
+    $(".updPhone").css('display', 'block');
+}
+
+function infoMailUser(event) {
+
+
+    $(".usMail").css('display', 'none');
+    $(".infoMail").css('display', 'none');
+    $(".updMail").val(event.innerText);
+    $(".updMail").css('display', 'block');
+}
+
+function infoCountryUser(event) {
+
+
+   
+
+
+    $.ajax({
+        url: 'Authorization/GetCountries',
+        type: "POST",
+        //  processData: false,
+        // contentType: false,
+        //  data: { Name: event.value },
+        success: function (response) {
+
+            var regSelect = document.getElementById("pullCountry");
+            for (var i = 0; i < response.length; i++) {
+                var option = document.createElement("option");
+                option.text = response[i].NameCountry;
+                option.value = response[i].id;
+                regSelect.add(option);
+            }
+
+            $(".usCountry").css('display', 'none');
+            $(".infoCountry").css('display', 'none');
+            // $(".updCountry").val(event.innerText);
+            //   document.getElementById("test").value = "test";
+            //for (var j = 0; j < regSelect.childElementCount;j++)
+            //{
+
+            //}
+
+            //document.getElementById('test').options[0].selected = true;
+
+            $(".updCountry").css('display', 'block');
+        }
+    });
+
+           
+}
+
+function infoRegionUser(event) {
+
+    var nameCountry = $('.infoCountry');
+    $.ajax({
+        url: 'Authorization/GetRegions',
+        type: "POST",
+        //  processData: false,
+        // contentType: false,
+        data: { Name: nameCountry[0].innerText },
+        success: function (response) {
+
+            var regSelect = document.getElementById("pullRegions");
+            for (var i = 0; i < response.length; i++) {
+                var option = document.createElement("option");
+                option.text = response[i].NameRegion;
+                option.value = response[i].id;
+                regSelect.add(option);
+            }
+
+            $(".usRegion").css('display', 'none');
+            $(".infoRegion").css('display', 'none');
+            $(".updRegion").val(event.innerText);
+            $(".updRegion").css('display', 'block');
+        }
+    });
+
+
+}
+
+function infoSityUser(event) {
+
+
+    var nameCountry = $('.infoRegion');
+    $.ajax({
+        url: 'Authorization/GetSities',
+        type: "POST",
+        //  processData: false,
+        // contentType: false,
+        data: {id:0, Name: nameCountry[0].innerText },
+        success: function (response) {
+
+            var regSelect = document.getElementById("pullSites");
+            for (var i = 0; i < response.length; i++) {
+                var option = document.createElement("option");
+                option.text = response[i].NameSity;
+                option.value = response[i].id;
+                regSelect.add(option);
+            }
+
+            $(".usSity").css('display', 'none');
+            $(".infoSity").css('display', 'none');
+            $(".updSity").val(event.innerText);
+            $(".updSity").css('display', 'block');
+        }
+    });
+
+    
+}
+

@@ -122,37 +122,41 @@
             <div class="container">
 
 
-                <h3 class="dataInfo ">Фамилия  	<span class="infoFirstName label label-default"></span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="firstName" placeholder="Фамилия" required="true" type="text" value="">
+                <h3 class="dataInfo frName ">Фамилия  	<span class="infoFirstName label label-default" onclick="infoFirstNameUser(this)"></span></h3>
+                <input class="updFirstName updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="firstName" placeholder="Фамилия" required="true" type="text" value="">
                
 
-                <h3 class="dataInfo ">Имя 		<span class="infoLastName label label-default">Василий</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="lastName" placeholder="Имя" required="true" type="text" value="">
+                <h3 class="dataInfo lsName">Имя 		<span class="infoLastName label label-default" onclick="infoLasttNameUser(this)">Василий</span></h3>
+                <input class=" updLastName updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="lastName" placeholder="Имя" required="true" type="text" value="">
 
-                <h3 class="dataInfo ">Отчество 	<span class="infoMiddleName label label-default">Васильевич</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="middleName" placeholder="Отчество" required="true" type="text" value="">
+                <h3 class="dataInfo mdlName">Отчество 	<span class="infoMiddleName label label-default" onclick="infoMiddleNameUser(this)">Васильевич</span></h3>
+                <input class="udMiddleName updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="middleName" placeholder="Отчество" required="true" type="text" value="">
 
-                <h3 class="dataInfo ">Номер 	<span class="infoPhone label label-default">0684247364</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="phone" placeholder="Номер" required="true" type="text" value="">
+                <h3 class="dataInfo usPhone">Номер 	<span class="infoPhone label label-default" onclick="infoPhoneUser(this)">0684247364</span></h3>
+                <input class=" updPhone updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="phone" placeholder="Номер" required="true" type="text" value="">
 
-                <h3 class="dataInfo ">Емейл 	<span class="infoMail label label-default">vadimmm972@gmail.com</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="mail" placeholder="Емейл" required="true" type="text" value="">
+                <h3 class="dataInfo usMail">Емейл 	<span class="infoMail label label-default" onclick="infoMailUser(this)">vadimmm972@gmail.com</span></h3>
+                <input class="updMail updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="mail" placeholder="Емейл" required="true" type="text" value="">
 
-                <h3 class="dataInfo">Страна 	<span class="infoCountry label label-default">Украина</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="country" placeholder="Страна" required="true" type="text" value="">
-
-                <h3 class="dataInfo">Регион 	<span class="infoRegion label label-default">Ровенская обл.</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="region" placeholder="Регион" required="true" type="text" value="">
-
-                <h3 class="dataInfo">Город 	<span class="infoSity label label-default">г.Ровно</span></h3>
-                <input class="updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="sity" placeholder="Город" required="true" type="text" value="">
-                <a href="#" class="updateInfo col-xs-4 button24" onclick="functionInfoUpdate()">Изменить</a>
-                <a href="#" class="SaveUpdateInfo col-xs-4 button25">Сохранить</a>
+                <h3 class="dataInfo usCountry">Страна 	<span class="infoCountry label label-default" onclick="infoCountryUser(this)">Украина</span></h3>
+                @*<input class="updCountry updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="country" placeholder="Страна" required="true" type="text" value="">*@
+                <select id="pullCountry" class="updCountry updateInfouser"></select>
+                
+                <h3 class="dataInfo usRegion">Регион 	<span class="infoRegion label label-default" onclick="infoRegionUser(this)">Ровенская обл.</span></h3>
+                @*<input class="updRegion updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="region" placeholder="Регион" required="true" type="text" value="">*@
+                <select id="pullRegions" class="updRegion updateInfouser"></select>
+                
+                <h3 class="dataInfo usSity">Город 	<span class="infoSity label label-default" onclick="infoSityUser(this)">г.Ровно</span></h3>
+               @* <input class="updSity updateInfouser" autofocus="true" data-val="true" data-val-required="The Login field is required." id="username" name="sity" placeholder="Город" required="true" type="text" value="">*@
+                <select id="pullSites" class="updSity updateInfouser"></select>
+                
+                 @* <a href="#" class="updateInfo col-xs-4 button24" onclick="functionInfoUpdate()">Изменить</a>*@
+                <a  href="#" class="SaveUpdateInfo col-xs-4 button25">Сохранить</a>
             </div>
         </div>
     </div>
 
-    </div>
+    
     <div id="overlay"></div>
 </body>
 </html>
@@ -186,4 +190,6 @@
                 );
         });
     });
+
+    $(".SaveUpdateInfo").prop("disabled", true);
     </script>
