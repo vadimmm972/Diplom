@@ -4,5 +4,37 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>Start Page</h2>
+<link href="~/Content/css/sliderStyle.css" rel="stylesheet" />
+<title>Home</title>
+<div>
+<h1 class="col-xs-6 LeftRightTitleHome">Shoping</h1>
+    <h1 class="col-xs-6 LeftRightTitleHome">Business</h1>
+    </div>
+<p class="sitehere-style-3dtext">SELL BUY</p>
 
+
+<div class="divSlider" id="slideshow">
+    <div>
+        <p class="sitehere-style-textSlider">Покупайте</p>
+    </div>
+    <div>
+        <p class="sitehere-style-textSlider">Продавайте</p>
+    </div>
+    <div>
+        <p class="sitehere-style-textSlider">Создавайте свой магазин</p>
+    </div>
+   
+</div>
+
+<script>
+    $("#slideshow > div:gt(0)").hide();
+
+    setInterval(function () {
+        $('#slideshow > div:first')
+          .fadeOut(1000)
+          .next()
+          .fadeIn(1000)
+          .end()
+          .appendTo('#slideshow');
+    }, 3000);
+    </script>

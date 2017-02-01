@@ -1,0 +1,84 @@
+﻿body {
+  background: rgba(255,255,255,1);
+background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 35%, rgba(246,246,246,1) 76%, rgba(246,246,246,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(35%, rgba(237,237,237,1)), color-stop(76%, rgba(246,246,246,1)), color-stop(100%, rgba(246,246,246,1)));
+background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 35%, rgba(246,246,246,1) 76%, rgba(246,246,246,1) 100%);
+background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 35%, rgba(246,246,246,1) 76%, rgba(246,246,246,1) 100%);
+background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 35%, rgba(246,246,246,1) 76%, rgba(246,246,246,1) 100%);
+}
+
+
+#fader { 
+  position: relative;
+  width: 90%;
+  max-width: 600px; 
+  margin: 0 auto; 
+  top: 20px;
+}
+
+#fader img {
+  position: absolute;
+  background-color: #f3f4ef; border: 1px solid #dedede; padding: 5px;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+
+#slideshow {
+  margin: 80px auto;
+  position: relative;
+ 
+  padding: 10px;
+ 
+}
+
+#slideshow > div {
+  /*position: absolute;
+  top: 10px;
+  left: 30%;*/
+  position: absolute;
+  left:0;
+  text-align:center;
+  right: 10px;
+  bottom: 10px;
+}
+
+.sldImage{
+    width:340px;
+    height:240px;
+}
+
+
+.sitehere-style-textSlider{
+font-family: 'Bookman Old Style', serif;
+line-height: 1em;
+color: #08daff;
+font-weight:bold;
+font-size: 106px;
+text-shadow:0px 0px 0 rgb(-19,191,228),1px 1px 0 rgb(-35,175,212),2px 2px 0 rgb(-52,158,195),3px 3px 0 rgb(-69,141,178),4px 4px 0 rgb(-86,124,161),5px 5px 0 rgb(-102,108,145),6px 6px 0 rgb(-119,91,128),7px 7px 0 rgb(-136,74,111),8px 8px 0 rgb(-152,58,95),9px 9px 0 rgb(-169,41,78),10px 10px 0 rgb(-186,24,61),11px 11px 0 rgb(-203,7,44),12px 12px 0 rgb(-219,-9,28),13px 13px 0 rgb(-236,-26,11), 14px 14px 0 rgb(-253,-43,-6),15px 15px 14px rgba(0,0,0,0.9),15px 15px 1px rgba(0,0,0,0.5),0px 0px 14px rgba(0,0,0,.2);}
+
+
+
+.divSlider{
+   background: rgba(226,226,226,1);
+background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 42%, rgba(254,254,254,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(226,226,226,1)), color-stop(42%, rgba(219,219,219,1)), color-stop(100%, rgba(254,254,254,1)));
+background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 42%, rgba(254,254,254,1) 100%);
+background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 42%, rgba(254,254,254,1) 100%);
+background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 42%, rgba(254,254,254,1) 100%);
+background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 42%, rgba(254,254,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+height:200px;
+}
+
+
+.LeftRightTitleHome{
+   
+font-family: Garamond, serif;
+line-height: 1em;
+color: #fff9d6;
+font-weight:bold;
+font-size: 65px;
+text-shadow:0px 0px 0 rgb(231,231,231),1px 1px 0 rgb(216,216,216),2px 2px 0 rgb(202,202,202),3px 3px 0 rgb(187,187,187),4px 4px 0 rgb(173,173,173),5px 5px 0 rgb(158,158,158), 6px 6px 0 rgb(144,144,144),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);}

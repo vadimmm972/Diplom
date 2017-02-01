@@ -162,6 +162,30 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+
+
+/*Title Home page*/
+
+
+.sitehere-style-3dtext{
+font-family: Garamond, serif;
+line-height: 1em;
+color: #e3e3ff;
+font-weight:bold;
+font-size: 140px;
+text-shadow:0px 0px 0 rgb(210,210,238),1px 1px 0 rgb(204,204,232),
+2px 2px 0 rgb(197,197,225),3px 3px 0 rgb(190,190,218),4px 4px 0 rgb(184,184,212),
+5px 5px 0 rgb(177,177,205),6px 6px 0 rgb(170,170,198),7px 7px 0 rgb(164,164,192),
+8px 8px 0 rgb(157,157,185),9px 9px 0 rgb(151,151,179),10px 10px 0 rgb(144,144,172),
+11px 11px 0 rgb(137,137,165),12px 12px 0 rgb(131,131,159),13px 13px 0 rgb(124,124,152),
+14px 14px 0 rgb(117,117,145),15px 15px 0 rgb(111,111,139),
+16px 16px 0 rgb(104,104,132),17px 17px 0 rgb(97,97,125),
+18px 18px 0 rgb(91,91,119),19px 19px 0 rgb(84,84,112), 20px 20px 0 rgb(77,77,105),
+21px 21px 20px rgba(0,0,0,1),21px 21px 1px rgba(0,0,0,0.5),0px 0px 20px rgba(0,0,0,.2);
+text-align:center;
+
+
+
  /*   Media tegs  */
     @media (max-width: 990px) {
          .deviseStyleTop{

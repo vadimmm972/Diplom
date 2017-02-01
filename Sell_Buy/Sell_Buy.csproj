@@ -93,6 +93,7 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\Site.css" />
+    <Content Include="Content\css\sliderStyle.css" />
     <Content Include="Content\css\StyleSheet.css" />
     <Content Include="Content\images\bg.png" />
     <Content Include="Content\javascript\AllScript.js" />
