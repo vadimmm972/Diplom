@@ -12,6 +12,7 @@
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
+   
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="~/Content/javascript/AllScript.js"></script>
@@ -61,7 +62,7 @@
                     else
                     {
                         <ul class="nav navbar-nav col-lg-5">
-                            <li><a href="#">Основная страница</a></li>
+                            <li><a href="#">Главная страница</a></li>
                             <li><a href="#contact">Контакти</a></li>
                         </ul>
                         <ul class=" LgTopStyle nav navbar-nav col-lg-5 ">
@@ -111,8 +112,12 @@
            
          @RenderBody()
          </div>
+
     </div>
 
+   
+
+    <!-- The content of your page would go here. -->
 
 
     <div id="modal_form">
@@ -192,4 +197,7 @@
     });
 
     $(".SaveUpdateInfo").prop("disabled", true);
+
+
+    $(".row").css('margin','0');
     </script>

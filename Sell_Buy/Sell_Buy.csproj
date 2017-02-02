@@ -92,6 +92,7 @@
     <Content Include="Content\css\AuntificationStyle.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\footer.css" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Content\css\sliderStyle.css" />
     <Content Include="Content\css\StyleSheet.css" />
@@ -118,6 +119,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Content\packages\jquery-1.11.3.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -148,6 +150,7 @@
     </Compile>
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
+    <Compile Include="Controllers\CreateMagazineController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Country.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -231,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CreateMagazine\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
