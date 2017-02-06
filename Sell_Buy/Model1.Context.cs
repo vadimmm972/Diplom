@@ -33,9 +33,10 @@ namespace Sell_Buy
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<LastView> LastViews { get; set; }
         public virtual DbSet<Magazine> Magazines { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Region> Regions { get; set; }
         public virtual DbSet<Site> Sites { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserMagazine> UserMagazines { get; set; }
     }
 }

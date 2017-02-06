@@ -40,7 +40,7 @@ namespace Sell_Buy.DB_Operation
                 p.currency = product.currency;
                 p.C_description = product.C_description;
                 p.producer = product.producer;
-                p.id_category = product.id_category;
+              
                 p.C_image = product.C_image;
                 p.rating = product.rating;
                 p.id_magazine = product.id_magazine;

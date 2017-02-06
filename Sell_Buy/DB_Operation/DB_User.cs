@@ -44,9 +44,7 @@ namespace Sell_Buy.DB_Operation
                 u.active = user.active;
                 u.id_language = user.id_language;
                 u.C_image = user.C_image;
-                u.id_magazine = user.id_magazine;
                 u.date_register = user.date_register;
-                u.register_magazine = user.register_magazine;
                 u.C_login = user.C_login;
                 u.C_password = user.C_password;
                 db.SaveChanges();

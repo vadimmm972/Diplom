@@ -111,9 +111,7 @@ namespace Sell_Buy.Controllers
                     active = 1,
                     id_language = 1,
                     C_image = newUser.Image.ToString(),
-                    id_magazine = null,
-                    date_register = date_reg_user,
-                    register_magazine = "none",
+                   
                     C_login = newUser.Login.ToString(),
                     C_password = newUser.Password.ToString()
                 };
@@ -139,6 +137,7 @@ namespace Sell_Buy.Controllers
             temp = rand.Next(100000000);
             var pic = System.Web.HttpContext.Current.Request.Files["HelpSectionImages"];
             var id = System.Web.HttpContext.Current.Request.Form["id"];
+            var operation = System.Web.HttpContext.Current.Request.Form["operation"];
            // var elementId = System.Web.HttpContext.Current.Request.Form["elementid"];
             var fileName = "P";
             fileName += temp;
@@ -147,10 +146,20 @@ namespace Sell_Buy.Controllers
             fileName += "Us.jpg";
             //            var path = Path.Combine(Server.MapPath("~/Content/images/pdf"), fileName.Trim());
             // var path = Path.Combine(Server.MapPath("Content/images/pdf"), fileName.Trim());
-            var path = Path.Combine(Server.MapPath("~/Content/images/usersPhotos"), fileName.Trim());
-            pic.SaveAs(path);
+            if (operation == "1")
+            {
+                var path = Path.Combine(Server.MapPath("~/Content/images/imagesPhotos"), fileName.Trim());
+                pic.SaveAs(path);
+            }
+            if(operation == "2")
+            {
+                var path = Path.Combine(Server.MapPath("~/Content/images/usersPhotos"), fileName.Trim());
+                pic.SaveAs(path);
+                ViewBag.PhotoUser = fileName.Trim();
+            }
+           
             var imgpath = "~/Content/images/usersPhotos" + fileName.Trim();
-            ViewBag.PhotoUser = fileName.Trim();
+           
            // var jsonResult = Json(imgpath, JsonRequestBehavior.AllowGet);
             return Json(fileName.Trim());
             

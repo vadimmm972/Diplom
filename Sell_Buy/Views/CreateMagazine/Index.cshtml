@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+
+    List<Category> cat = ViewBag.categories;
+    
+}
+
+<h2>Содайте свой магазин</h2>
+   
+    
+
+<div id="login">
+    <h1>Регистрация магазина</h1>
+    <fieldset id="inputs">
+        <input id="nameMagazine" type="text" placeholder="Название магазина" autofocus required>
+        <select id="selectIdCategory" onchange="CategoryMagazine(this)">
+            <option></option>
+            @for (int i = 0; i < cat.Count(); i++)
+            {
+                <option value="@cat[i].id">@cat[i].name_category</option>
+            }
+        </select>
+
+
+    </fieldset>
+  
+    <button style="margin-left:19%;" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Загрузить ваше фото</button>
+    <fieldset id="actions">
+        <input class="regBtn" type="button" id="submit" onclick="CreateMagazine()" value="Создать">
+
+    </fieldset>
+</div>
+
+<div class=" modal fade" id="myModal" role="dialog">
+    <div class="modalStyleImage modal-dialog modal-sm">
+        <div class="dialImg modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Фото магазина</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="uploadImage">
+                    <div id="imgSource" style="width: auto; min-height: 102px; max-height: none; height: auto;" class="ui-dialog-content ui-widget-content">
+
+                        <p>Загрузить: <input type="file" class=" imgsource"></p>
+
+                        <a href="javascript:AddImg('magImg')" class="button28">Загрузить картинку</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input id="imgSaveMag" type="hidden" value="">
+<input id="idcategoryToMagazine" type="hidden" value="">
+
+<script>
+    $(".modalStyleImage").css('left','38%');
+    </script>
+
+

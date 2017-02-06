@@ -12,16 +12,13 @@ namespace Sell_Buy
     using System;
     using System.Collections.Generic;
     
-    public partial class Category
+    public partial class UserMagazine
     {
-        public Category()
-        {
-            this.Magazines = new HashSet<Magazine>();
-        }
-    
         public int id { get; set; }
-        public string name_category { get; set; }
+        public Nullable<int> id_user { get; set; }
+        public Nullable<int> id_magazine { get; set; }
     
-        public virtual ICollection<Magazine> Magazines { get; set; }
+        public virtual Magazine Magazine { get; set; }
+        public virtual User User { get; set; }
     }
 }

@@ -7,18 +7,18 @@ namespace Sell_Buy.DB_Operation
 {
     public class DB_Magazine
     {
-        public string InsertMagazine(Magazine magazine)
+        public int InsertMagazine(Magazine magazine)
         {
             try
             {
                 Sell_Buy_Entities db = new Sell_Buy_Entities();
                 db.Magazines.Add(magazine);
                 db.SaveChanges();
-                return magazine.name_magazine + " was succefully inserted";
+                return magazine.id;
             }
             catch (Exception e)
             {
-                return "Error:" + e.Message;
+                return 0;
             }
         }
 

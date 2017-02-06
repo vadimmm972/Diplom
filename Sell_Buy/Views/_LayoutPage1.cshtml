@@ -11,8 +11,11 @@
     <link href="~/Content/css/AllStyle.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link href="~/Content/css/btnStyle.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-   
+
+    <script src="~/Content/javascript/ModalForms.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="~/Content/javascript/AllScript.js"></script>
@@ -29,7 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="go" class="navbar-brand" href="" onclick="getInfoUser()">Мой профиль</a>
+
                 </div>
                 <div class="collapse navbar-collapse">
 
@@ -62,16 +65,19 @@
                     else
                     {
                         <ul class="nav navbar-nav col-lg-5">
+                            <a id="go" class="navbar-brand" href="" onclick="getInfoUser()">Мой профиль</a>
                             <li><a href="#">Главная страница</a></li>
                             <li><a href="#contact">Контакти</a></li>
                         </ul>
                         <ul class=" LgTopStyle nav navbar-nav col-lg-5 ">
                             <li><a href="#contact">Корзина</a></li>
-                            <li><a href="#contact">Создать магазин</a></li>
+                            <li onclick="GetAllMagazineUser()"><a id="click" href="javascript:GetAllMagazineUser()" data-toggle="modal" data-target="#myModal">Мои магазины</a></li>
+                            <li>@Html.ActionLink("Создать магазин", "Index", "CreateMagazine")</li>
                             <li>@Html.ActionLink("Выход", "LogOut", "Authentication")</li>
                         </ul>
                         <ul class="deviseStyleTop nav navbar-nav col-lg-5">
                             <li class="dropdown">
+                                  
                                 <a class=" dropdown-toggle" data-toggle="dropdown" href="#">Допонительно<span class="caret"></span></a>
                                 <ul style="background:#101010;" class="dropdown-menu ">
                                     <li class="linkA"><a href="#contact">Корзина</a></li>
@@ -115,7 +121,8 @@
 
     </div>
 
-   
+<!-- Get user magazine-->
+    <a href="#Allmagazine" id="manual-ajax">second example</a>
 
     <!-- The content of your page would go here. -->
 
@@ -163,6 +170,33 @@
 
     
     <div id="overlay"></div>
+
+
+
+    <!-- Modal get all magazines -->
+    <div class="container">
+       
+
+      
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Список ваших магазинов</h4>
+                    </div>
+                    <div class="myMagazines modal-body">
+                       
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>
 <script>

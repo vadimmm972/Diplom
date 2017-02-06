@@ -1,8 +1,13 @@
-﻿function AddImg() {
-    var homUrl = $("#hdnHomePageUrl").val();
-    homUrl = homUrl ? homUrl : window.location.host + "/";
-    homUrl = homUrl.concat('test/UploadImage');
-
+﻿function AddImg(option) {
+    var op;
+    if (option == "magImg")
+    {
+        op = "1";
+    }
+    if (option == "usimg")
+    {
+        op = "2";
+    }
 
     var data = new FormData();
     var files = $("#imgSource .imgsource").get(0).files;
@@ -16,6 +21,7 @@
     }
     data.append("id", 11);
     data.append("elementid", 11);
+    data.append("operation", op);
     $.ajax({
         url: 'Authorization/UploadImage',
         type: "POST",
@@ -24,7 +30,13 @@
         data: data,
         success: function (response) {
             // $("body").append("<img src=\"" + response + "\" >");
-            $("#imgSave").val(response);
+            if (op == "1") {
+                $("#imgSaveMag").val(response);
+            }
+            if (op == "2") {
+                $("#imgSave").val(response);
+            }
+           
         }
     });
 }
@@ -307,5 +319,41 @@ function infoSityUser(event) {
     });
 
     
+}
+
+
+function CategoryMagazine(event) {
+    $("#idcategoryToMagazine").val(event.value);
+}
+
+
+function CreateMagazine()
+{
+    
+    var name = $('#nameMagazine').val();
+    var photo = $('#imgSaveMag').val();
+    var idCategory = $('#idcategoryToMagazine');
+    if (name.length <= 0 || photo.length <= 0 || idCategory == null)
+    {
+        alert("не все поля заполнены");
+        return null;
+    }
+    $.ajax({
+        url: 'CreateMagazine/CreateMagazine',
+        type: "POST",
+        //  processData: false,
+        // contentType: false,
+        data: { nameMagazine: name, photo: photo, idCategory: idCategory[0].value },
+        success: function (response) {
+
+            var regSelect = document.getElementById("pullSites");
+            for (var i = 0; i < response.length; i++) {
+                var option = document.createElement("option");
+                option.text = response[i].NameSity;
+                option.value = response[i].id;
+                regSelect.add(option);
+            }
+        }
+    });
 }
 

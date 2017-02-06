@@ -12,6 +12,7 @@ namespace Sell_Buy.Controllers
         // GET: Authentication
         public ActionResult Index()
         {
+           
             return View("Index");
         }
 

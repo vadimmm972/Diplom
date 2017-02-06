@@ -98,6 +98,7 @@
     <Content Include="Content\css\StyleSheet.css" />
     <Content Include="Content\images\bg.png" />
     <Content Include="Content\javascript\AllScript.js" />
+    <Content Include="Content\javascript\ModalForms.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -120,6 +121,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Content\packages\jquery-1.11.3.min.js" />
+    <Content Include="Content\css\btnStyle.css" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -151,11 +153,13 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\AuthorizationController.cs" />
     <Compile Include="Controllers\CreateMagazineController.cs" />
+    <Compile Include="Controllers\ManagementMagazineController.cs" />
     <Compile Include="Controllers\StartPageController.cs" />
     <Compile Include="Country.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DB_Operation\DB-Language.cs" />
+    <Compile Include="DB_Operation\DB-UsersMagazine.cs" />
     <Compile Include="DB_Operation\DB_Basket.cs" />
     <Compile Include="DB_Operation\DB_Brand.cs" />
     <Compile Include="DB_Operation\DB_Category.cs" />
@@ -211,6 +215,9 @@
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserMagazine.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -225,6 +232,8 @@
     <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\Authentication\Index.cshtml" />
     <Content Include="Views\StartPage\Index.cshtml" />
+    <Content Include="Views\CreateMagazine\Index.cshtml" />
+    <Content Include="Views\ManagementMagazine\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -234,7 +243,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CreateMagazine\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -30,7 +30,6 @@ namespace Sell_Buy
         public string currency { get; set; }
         public string C_description { get; set; }
         public string producer { get; set; }
-        public Nullable<int> id_category { get; set; }
         public string C_image { get; set; }
         public Nullable<double> rating { get; set; }
         public Nullable<int> id_magazine { get; set; }
@@ -38,7 +37,6 @@ namespace Sell_Buy
     
         public virtual ICollection<Basket> Baskets { get; set; }
         public virtual Brand Brand { get; set; }
-        public virtual Category Category { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<LastView> LastViews { get; set; }
         public virtual Magazine Magazine { get; set; }

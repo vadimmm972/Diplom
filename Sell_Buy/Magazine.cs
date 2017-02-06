@@ -17,15 +17,17 @@ namespace Sell_Buy
         public Magazine()
         {
             this.Products = new HashSet<Product>();
-            this.Users = new HashSet<User>();
+            this.UserMagazines = new HashSet<UserMagazine>();
         }
     
         public int id { get; set; }
         public string name_magazine { get; set; }
         public string C_image { get; set; }
         public int C_status { get; set; }
+        public Nullable<int> id_category { get; set; }
     
+        public virtual Category Category { get; set; }
         public virtual ICollection<Product> Products { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<UserMagazine> UserMagazines { get; set; }
     }
 }

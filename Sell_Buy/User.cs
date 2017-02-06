@@ -19,6 +19,7 @@ namespace Sell_Buy
             this.Baskets = new HashSet<Basket>();
             this.Comments = new HashSet<Comment>();
             this.LastViews = new HashSet<LastView>();
+            this.UserMagazines = new HashSet<UserMagazine>();
         }
     
         public int id { get; set; }
@@ -34,9 +35,7 @@ namespace Sell_Buy
         public Nullable<int> active { get; set; }
         public Nullable<int> id_language { get; set; }
         public string C_image { get; set; }
-        public Nullable<int> id_magazine { get; set; }
         public string date_register { get; set; }
-        public string register_magazine { get; set; }
         public string C_login { get; set; }
         public string C_password { get; set; }
     
@@ -45,8 +44,8 @@ namespace Sell_Buy
         public virtual Country Country { get; set; }
         public virtual Language Language { get; set; }
         public virtual ICollection<LastView> LastViews { get; set; }
-        public virtual Magazine Magazine { get; set; }
         public virtual Region Region { get; set; }
         public virtual Site Site { get; set; }
+        public virtual ICollection<UserMagazine> UserMagazines { get; set; }
     }
 }
